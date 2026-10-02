@@ -1,0 +1,13 @@
+# Operating System Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Environment and sensitive keys
+.env
+*.log
+
+# Scratch scripts
+scratch/
+find_ai.php
+clean_ai_text.php

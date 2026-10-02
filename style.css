@@ -1,0 +1,240 @@
+/* =========================================
+   1. GENERAL STYLES
+   ========================================= */
+body {
+    background-color: #FDFBF7; /* Cream background */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #1A1A1A;
+}
+
+/* =========================================
+   2. NAVIGATION & MEGA MENU (FIXED)
+   ========================================= */
+.navbar-nav .nav-link {
+    color: #1A1A1A;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: #1CA578;
+}
+
+/* --- THE FIX FOR THE CRUSHED MENU --- */
+.mega-menu-content {
+    background-color: #FDFBF7;
+    border-radius: 8px;
+    padding-bottom: 20px;
+    border: 1px solid rgba(0,0,0,0.05);
+    
+    /* This forces the menu to be wide and centered on screen */
+    width: 900px !important; 
+    position: absolute;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    margin-top: 10px;
+}
+
+/* On smaller laptops, shrink it slightly */
+@media (max-width: 1200px) {
+    .mega-menu-content {
+        width: 750px !important;
+    }
+}
+
+/* Spacing and Font fixes for the columns */
+.mega-menu-content .dropdown-item {
+    font-weight: 500;
+    color: #1A1A1A;
+    font-size: 0.9rem;
+    padding: 6px 0;
+    background: transparent;
+}
+
+.mega-menu-content .dropdown-item:hover {
+    color: #1CA578;
+    background: transparent;
+    padding-left: 5px; 
+    transition: padding 0.2s;
+}
+
+.spacing-wide {
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+}
+
+/* =========================================
+   3. BUTTONS & UI ELEMENTS
+   ========================================= */
+.btn-success {
+    background-color: #1CA578;
+    border: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-success:hover {
+    background-color: #158c65;
+    transform: translateY(-2px);
+}
+
+/* =========================================
+   4. HOME PAGE SECTIONS
+   ========================================= */
+.feature-card {
+    background: #ffffff;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08) !important;
+}
+
+.icon-circle.bg-light-green {
+    width: 50px;
+    height: 50px;
+    background-color: #E8F5F1;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider-container {
+    scrollbar-width: thin;
+}
+
+.slider-container::-webkit-scrollbar {
+    height: 6px;
+}
+
+.slider-container::-webkit-scrollbar-thumb {
+    background: #ddd; 
+    border-radius: 3px;
+}
+
+.dark-card {
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.dark-card:hover {
+    transform: scale(1.02);
+}
+
+.card-image-wrapper {
+    height: 220px;
+}
+
+.card-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.bg-light-yellow {
+    background-color: #FBF9F0; 
+}
+
+.border-bottom-only {
+    border: none;
+    border-bottom: 1px solid #ddd;
+    border-radius: 0;
+    background-color: transparent !important;
+    padding-left: 0;
+}
+
+.border-bottom-only:focus {
+    box-shadow: none;
+    border-color: #1CA578;
+}
+
+/* =========================================
+   5. INNER PAGES STYLES
+   ========================================= */
+.circle-img-wrapper {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 15px;
+    border: 3px solid #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.trade-btn {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 10px 15px;
+    font-size: 0.85rem;
+    color: #555;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+.trade-btn:hover {
+    border-color: #1CA578;
+    color: #1CA578;
+    background: #F0FDF8;
+}
+
+.pricing-card {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+.pricing-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+.pricing-card.recommended {
+    border: 2px solid #1CA578;
+    position: relative;
+    overflow: hidden;
+}
+.recommend-badge {
+    background-color: #1CA578;
+    color: white;
+    text-align: center;
+    padding: 5px 0;
+    font-weight: bold;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+.roi-section {
+    background-color: #0b0f19;
+    color: white;
+    border-radius: 8px;
+    padding: 50px;
+}
+.roi-green-text {
+    color: #1CA578;
+    font-size: 3rem;
+    font-weight: bold;
+}
+.contact-header {
+    color: #1CA578;
+}
+.contact-input {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 12px;
+    border-radius: 4px;
+}
+.pre-sale-link {
+    color: #1CA578;
+    text-decoration: none;
+    font-weight: 500;
+}
+.see-action-box {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
