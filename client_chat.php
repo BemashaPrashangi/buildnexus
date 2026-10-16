@@ -1,3 +1,5 @@
 <?php
-// Root router for client_chat.php
-require_once __DIR__ . '/features/client_chat.php';
+// client_chat.php - Root routing alias for features/client_chat.php
+$query = !empty($_SERVER['QUERY_STRING']) ? '?' . $_SERVER['QUERY_STRING'] : '';
+header("Location: features/client_chat.php" . $query);
+exit;

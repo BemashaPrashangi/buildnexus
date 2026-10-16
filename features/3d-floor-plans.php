@@ -1,5 +1,5 @@
 <?php
-require_once '../db.php';
+require_once __DIR__ . '/../db.php';
 require_once 'auth_check.php';
 
 // Handle admin actions

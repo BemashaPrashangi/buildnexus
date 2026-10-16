@@ -1,5 +1,5 @@
 <?php
-require '../db.php';
+require_once __DIR__ . '/../db.php';
 try {
     // Create table if it doesn't exist
     $pdo->exec("CREATE TABLE IF NOT EXISTS bids (

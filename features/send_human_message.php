@@ -1,5 +1,5 @@
 <?php
-require_once '../db.php';
+require_once __DIR__ . '/../db.php';
 session_start();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_SESSION['user_id'])) {

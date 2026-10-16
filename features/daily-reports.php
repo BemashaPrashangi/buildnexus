@@ -1,5 +1,5 @@
 <?php
-require '../db.php'; // දත්ත සමුදා සම්බන්ධතාවය
+require_once __DIR__ . '/../db.php'; // දත්ත සමුදා සම්බන්ධතාවය
 session_start();
 
 // 1. ආරක්ෂාව: Foreman හෝ Admin පමණක් ඇතුල් විය හැක

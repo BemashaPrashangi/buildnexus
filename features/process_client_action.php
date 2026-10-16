@@ -1,6 +1,6 @@
 <?php
 // File: features/process_client_action.php
-require_once '../db.php';
+require_once __DIR__ . '/../db.php';
 session_start();
 
 // 1. Security Check
