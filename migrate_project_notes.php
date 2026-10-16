@@ -1,5 +1,5 @@
 <?php
-require_once 'c:/xampp/htdocs/buildnexus/db.php';
+require_once __DIR__ . '/db.php';
 
 try {
     echo "=== MIGRATING project_notes TABLE ===\n";

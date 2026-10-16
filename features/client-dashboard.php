@@ -1,6 +1,6 @@
 <?php
 // Database connection and session must be established at the top of your file
-require_once 'db.php';
+require_once __DIR__ . '/../db.php';
 
 // Fetch the pending estimate for this client's linked project
 $stmt_pending = $pdo->prepare("

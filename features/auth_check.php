@@ -6,9 +6,8 @@ if (session_status() === PHP_SESSION_NONE) {
 
 // 1. පරිශීලකයා පද්ධතියට ලොග් වී ඇත්දැයි පරීක්ෂා කිරීම (Authentication)
 if (!isset($_SESSION['user_id'])) {
-    // ලොග් වී නැතිනම් login පිටුවට යොමු කරයි.
-    // ඔබගේ folder structure එකට අනුව path එක නිවැරදි බව සහතික කරගන්න.
-    header("Location: /buildnexus/login.php");
+    $base_uri = (strpos($_SERVER['REQUEST_URI'] ?? '', '/buildnexus') === 0) ? '/buildnexus' : '';
+    header("Location: {$base_uri}/login.php");
     exit();
 }
 
@@ -19,11 +18,11 @@ if (!isset($_SESSION['user_id'])) {
 function checkRole($allowed_roles) {
     // පරිශීලකයාගේ Role එක අවසර ලත් ලැයිස්තුවේ (Allowed Roles Array) තිබේදැයි පරීක්ෂා කරයි.
     if (!isset($_SESSION['role']) || !in_array($_SESSION['role'], $allowed_roles)) {
-        
+        $base_uri = (strpos($_SERVER['REQUEST_URI'] ?? '', '/buildnexus') === 0) ? '/buildnexus' : '';
         // අවසර නොමැති නම් පණිවිඩයක් පෙන්වා නැවත ප්‍රධාන පිටුවට යොමු කරයි.
         echo "<script>
                 alert('Access Denied: මෙම පිටුවට පිවිසීමට ඔබට අවසර නැත.');
-                window.location.href = '/buildnexus/index.php'; 
+                window.location.href = '{$base_uri}/index.php'; 
               </script>";
         exit();
     }
