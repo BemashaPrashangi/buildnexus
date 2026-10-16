@@ -4,10 +4,7 @@
  * Routes all incoming requests to the respective PHP files or root index.php
  */
 
-// Set working directory to project root
 $rootDir = realpath(__DIR__ . '/..');
-chdir($rootDir);
-set_include_path(get_include_path() . PATH_SEPARATOR . $rootDir);
 
 // Extract the path from REQUEST_URI
 $requestUri = $_SERVER['REQUEST_URI'] ?? '/';
@@ -69,9 +66,15 @@ if ($ext !== 'php') {
     exit;
 }
 
+// Change working directory to target script directory (e.g. features/ or root)
+// so relative paths like '../db.php', 'db.php', and local includes resolve correctly
+$targetDir = dirname($realTarget);
+chdir($targetDir);
+set_include_path($targetDir . PATH_SEPARATOR . $rootDir . PATH_SEPARATOR . get_include_path());
+
 // Set standard server variables so included scripts work as expected
 $_SERVER['SCRIPT_FILENAME'] = $realTarget;
-$_SERVER['SCRIPT_NAME']     = '/' . ltrim(str_replace($rootDir, '', $realTarget), '/\\');
+$_SERVER['SCRIPT_NAME']     = '/' . ltrim(str_replace([$rootDir, '\\'], ['', '/'], $realTarget), '/');
 $_SERVER['PHP_SELF']        = $_SERVER['SCRIPT_NAME'];
 
 // Execute target PHP file
